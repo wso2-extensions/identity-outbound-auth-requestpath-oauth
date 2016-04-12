@@ -53,7 +53,7 @@ public class OAuthRequestPathAuthenticator extends AbstractApplicationAuthentica
             log.trace("Inside canHandle()");
         }
 
-        String headerValue = (String) request.getSession().getAttribute(AUTHORIZATION_HEADER_NAME);
+        String headerValue = request.getHeader(AUTHORIZATION_HEADER_NAME);
 
         if (headerValue != null && !"".equals(headerValue.trim())) {
             String[] headerPart = headerValue.trim().split(" ");
@@ -72,7 +72,7 @@ public class OAuthRequestPathAuthenticator extends AbstractApplicationAuthentica
                                                  HttpServletResponse response, AuthenticationContext context)
             throws AuthenticationFailedException {
 
-        String headerValue = (String) request.getSession().getAttribute(AUTHORIZATION_HEADER_NAME);
+        String headerValue = request.getHeader(AUTHORIZATION_HEADER_NAME);
 
         String token = null;
         if (headerValue != null) {
