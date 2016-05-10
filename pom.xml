@@ -40,6 +40,10 @@
         <tag>HEAD</tag>
     </scm>
 
+    <properties>
+        <identity.inbound.auth.oauth.version>5.0.9-SNAPSHOT</identity.inbound.auth.oauth.version>
+    </properties>
+
     <repositories>
         <repository>
             <id>wso2-nexus</id>
