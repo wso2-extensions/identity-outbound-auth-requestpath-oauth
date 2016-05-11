@@ -40,8 +40,17 @@
         <tag>HEAD</tag>
     </scm>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.wso2.carbon.identity</groupId>
+                <artifactId>org.wso2.carbon.identity.oauth</artifactId>
+                <version>${identity.inbound.auth.oauth.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <properties>
-        <identity.inbound.auth.oauth.version>5.0.9-SNAPSHOT</identity.inbound.auth.oauth.version>
+        <identity.inbound.auth.oauth.version>5.1.0</identity.inbound.auth.oauth.version>
     </properties>
 
     <repositories>
