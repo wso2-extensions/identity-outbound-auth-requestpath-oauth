@@ -51,6 +51,7 @@
         </dependencies>
     </dependencyManagement>
     <properties>
+        <identity.framework.version>5.1.1-SNAPSHOT</identity.framework.version>
         <identity.inbound.auth.oauth.version>5.1.0</identity.inbound.auth.oauth.version>
     </properties>
 
