@@ -103,7 +103,7 @@
                         <Export-Package>
                             !org.wso2.carbon.identity.application.authenticator.requestpath.oauth.internal,
                             org.wso2.carbon.identity.application.authenticator.requestpath.oauth.*;
-                            version="${carbon.identity.package.export.version}"
+                            version="${identity.outbound.auth.requestpath.oauth.version}"
                         </Export-Package>
                     </instructions>
                 </configuration>
