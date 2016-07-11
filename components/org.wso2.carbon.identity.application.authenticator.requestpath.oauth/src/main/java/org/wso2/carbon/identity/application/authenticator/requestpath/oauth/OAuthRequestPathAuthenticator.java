@@ -81,7 +81,7 @@ public class OAuthRequestPathAuthenticator extends AbstractApplicationAuthentica
             token = request.getParameter(ACCESS_TOKEN);
         }
 
-
+        String user = null;
         try {
             OAuth2TokenValidationService validationService = new OAuth2TokenValidationService();
             OAuth2TokenValidationRequestDTO validationReqDTO = new OAuth2TokenValidationRequestDTO();
@@ -96,7 +96,7 @@ public class OAuthRequestPathAuthenticator extends AbstractApplicationAuthentica
                 throw new AuthenticationFailedException("Authentication Failed");
             }
 
-            String user = validationResponse.getAuthorizedUser();
+            user = validationResponse.getAuthorizedUser();
             String tenantDomain = MultitenantUtils.getTenantDomain(user);
 
             if (MultitenantConstants.SUPER_TENANT_DOMAIN_NAME.equals(tenantDomain)) {
@@ -121,7 +121,8 @@ public class OAuthRequestPathAuthenticator extends AbstractApplicationAuthentica
             context.setSubject(AuthenticatedUser.createLocalAuthenticatedUserFromSubjectIdentifier(user));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-            throw new AuthenticationFailedException(e.getMessage(), e);
+            throw new AuthenticationFailedException(e.getMessage(), AuthenticatedUser
+                    .createLocalAuthenticatedUserFromSubjectIdentifier(user), e);
         }
     }
 
