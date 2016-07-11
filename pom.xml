@@ -92,7 +92,7 @@
             <dependency>
                 <groupId>org.wso2.carbon.identity</groupId>
                 <artifactId>org.wso2.carbon.identity.application.authenticator.requestpath.oauth</artifactId>
-                <version>${identity.outbound.auth.requestpath.oauth.version}</version>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
