@@ -25,6 +25,7 @@ import org.wso2.carbon.identity.application.authentication.framework.RequestPath
 import org.wso2.carbon.identity.application.authentication.framework.context.AuthenticationContext;
 import org.wso2.carbon.identity.application.authentication.framework.exception.AuthenticationFailedException;
 import org.wso2.carbon.identity.application.authentication.framework.model.AuthenticatedUser;
+import org.wso2.carbon.identity.application.common.model.User;
 import org.wso2.carbon.identity.oauth2.OAuth2TokenValidationService;
 import org.wso2.carbon.identity.oauth2.dto.OAuth2TokenValidationRequestDTO;
 import org.wso2.carbon.identity.oauth2.dto.OAuth2TokenValidationRequestDTO.OAuth2AccessToken;
@@ -93,7 +94,8 @@ public class OAuthRequestPathAuthenticator extends AbstractApplicationAuthentica
 
             if (!validationResponse.isValid()) {
                 log.error("RequestPath OAuth authentication failed");
-                throw new AuthenticationFailedException("Authentication Failed");
+                throw new AuthenticationFailedException("Authentication Failed", User.getUserFromUserName
+                        (validationResponse.getAuthorizedUser()));
             }
 
             user = validationResponse.getAuthorizedUser();
@@ -121,8 +123,7 @@ public class OAuthRequestPathAuthenticator extends AbstractApplicationAuthentica
             context.setSubject(AuthenticatedUser.createLocalAuthenticatedUserFromSubjectIdentifier(user));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-            throw new AuthenticationFailedException(e.getMessage(), AuthenticatedUser
-                    .createLocalAuthenticatedUserFromSubjectIdentifier(user), e);
+            throw new AuthenticationFailedException(e.getMessage(), User.getUserFromUserName(user), e);
         }
     }
 
