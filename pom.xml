@@ -109,7 +109,8 @@
 
         <identity.framework.version>5.5.0</identity.framework.version>
         <carbon.identity.package.import.version.range>[5.0.0, 6.0.0)</carbon.identity.package.import.version.range>
-        <identity.inbound.auth.oauth.version>5.2.0</identity.inbound.auth.oauth.version>
+        <identity.inbound.auth.oauth.version>6.0.0</identity.inbound.auth.oauth.version>
+        <identity.oauth.package.import.version.range>[6.0.0, 7.0.0)</identity.oauth.package.import.version.range>
 
         <maven.scr.plugin.version>1.7.2</maven.scr.plugin.version>
         <maven.bundle.plugin.version>2.4.0</maven.bundle.plugin.version>

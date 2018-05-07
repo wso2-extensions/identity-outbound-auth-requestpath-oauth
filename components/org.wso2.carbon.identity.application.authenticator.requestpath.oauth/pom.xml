@@ -95,9 +95,9 @@
                             org.wso2.carbon.identity.application.common.*;
                             version="${carbon.identity.package.import.version.range}",
                             org.wso2.carbon.identity.oauth2;
-                            version="${carbon.identity.package.import.version.range}",
+                            version="${identity.oauth.package.import.version.range}",
                             org.wso2.carbon.identity.oauth2.dto;
-                            version="${carbon.identity.package.import.version.range}",
+                            version="${identity.oauth.package.import.version.range}",
 
                             org.wso2.carbon.user.core.service; version="${carbon.kernel.package.import.version.range}",
                             org.wso2.carbon.utils.multitenancy; version="${carbon.kernel.package.import.version.range}"
