@@ -23,14 +23,16 @@ import org.osgi.service.component.ComponentContext;
 import org.wso2.carbon.identity.application.authentication.framework.ApplicationAuthenticator;
 import org.wso2.carbon.identity.application.authenticator.requestpath.oauth.OAuthRequestPathAuthenticator;
 import org.wso2.carbon.user.core.service.RealmService;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
+import org.osgi.service.component.annotations.ReferencePolicy;
 
-
-/**
- * @scr.component name="identity.application.authenticator.requestpath.oauth.component" immediate="true"
- * @scr.reference name="realm.service"
- * interface="org.wso2.carbon.user.core.service.RealmService"cardinality="1..1"
- * policy="dynamic" bind="setRealmService" unbind="unsetRealmService"
- */
+@Component(
+         name = "identity.application.authenticator.requestpath.oauth.component", 
+         immediate = true)
 public class OAuthRequestPathAuthenticatorServiceComponent {
 
     private static Log log = LogFactory.getLog(OAuthRequestPathAuthenticatorServiceComponent.class);
@@ -41,11 +43,18 @@ public class OAuthRequestPathAuthenticatorServiceComponent {
         return realmService;
     }
 
+    @Reference(
+             name = "realm.service", 
+             service = org.wso2.carbon.user.core.service.RealmService.class, 
+             cardinality = ReferenceCardinality.MANDATORY, 
+             policy = ReferencePolicy.DYNAMIC, 
+             unbind = "unsetRealmService")
     protected void setRealmService(RealmService realmService) {
         log.debug("Setting the Realm Service");
         OAuthRequestPathAuthenticatorServiceComponent.realmService = realmService;
     }
 
+    @Activate
     protected void activate(ComponentContext ctxt) {
         try {
             OAuthRequestPathAuthenticator auth = new OAuthRequestPathAuthenticator();
@@ -58,6 +67,7 @@ public class OAuthRequestPathAuthenticatorServiceComponent {
         }
     }
 
+    @Deactivate
     protected void deactivate(ComponentContext context) {
         if (log.isDebugEnabled()) {
             log.debug("OAuthRequestPathAuthenticator bundle is deactivated");
@@ -65,10 +75,10 @@ public class OAuthRequestPathAuthenticatorServiceComponent {
     }
 
     protected void unsetRealmService(RealmService realmService) {
-        if(log.isDebugEnabled()) {
+        if (log.isDebugEnabled()) {
             log.debug("UnSetting the Realm Service");
         }
         OAuthRequestPathAuthenticatorServiceComponent.realmService = null;
     }
-
 }
+
