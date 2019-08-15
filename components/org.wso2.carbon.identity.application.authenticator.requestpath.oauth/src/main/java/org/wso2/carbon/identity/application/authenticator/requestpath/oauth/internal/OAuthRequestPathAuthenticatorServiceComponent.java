@@ -33,7 +33,7 @@ import org.wso2.carbon.user.core.service.RealmService;
  */
 public class OAuthRequestPathAuthenticatorServiceComponent {
 
-    private static Log log = LogFactory.getLog(OAuthRequestPathAuthenticatorServiceComponent.class);
+    private static final Log log = LogFactory.getLog(OAuthRequestPathAuthenticatorServiceComponent.class);
 
     private static RealmService realmService;
 
