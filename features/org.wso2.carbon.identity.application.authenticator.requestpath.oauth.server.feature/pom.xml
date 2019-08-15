@@ -66,7 +66,7 @@
                                 </bundleDef>
                             </bundles>
                             <importFeatures>
-                                <importFeatureDef>org.wso2.carbon.core:compatible:${carbon.kernel.version}</importFeatureDef>
+                                <importFeatureDef>org.wso2.carbon.core:compatible:${carbon.kernel.feature.version}</importFeatureDef>
                                 <importFeatureDef>org.wso2.carbon.identity.application.authentication.framework.server:compatible:${identity.framework.version}</importFeatureDef>
                                 <importFeatureDef>org.wso2.carbon.identity.oauth.server:compatible:${identity.inbound.auth.oauth.version}</importFeatureDef>
                             </importFeatures>
