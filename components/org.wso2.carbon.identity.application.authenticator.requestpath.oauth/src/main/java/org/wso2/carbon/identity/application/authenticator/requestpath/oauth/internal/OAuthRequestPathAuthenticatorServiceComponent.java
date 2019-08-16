@@ -35,7 +35,7 @@ import org.osgi.service.component.annotations.ReferencePolicy;
          immediate = true)
 public class OAuthRequestPathAuthenticatorServiceComponent {
 
-    private static Log log = LogFactory.getLog(OAuthRequestPathAuthenticatorServiceComponent.class);
+    private static final Log log = LogFactory.getLog(OAuthRequestPathAuthenticatorServiceComponent.class);
 
     private static RealmService realmService;
 

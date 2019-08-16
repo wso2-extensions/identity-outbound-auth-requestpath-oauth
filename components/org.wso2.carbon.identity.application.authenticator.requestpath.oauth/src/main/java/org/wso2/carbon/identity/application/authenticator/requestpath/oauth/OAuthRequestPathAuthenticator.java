@@ -46,7 +46,7 @@ public class OAuthRequestPathAuthenticator extends AbstractApplicationAuthentica
     private static final String BEARER_SCHEMA = "Bearer";
     private static final String AUTHENTICATOR_NAME = "OAuthRequestPathAuthenticator";
     private static final String ACCESS_TOKEN = "access_token";
-    private static Log log = LogFactory.getLog(OAuthRequestPathAuthenticator.class);
+    private static final Log log = LogFactory.getLog(OAuthRequestPathAuthenticator.class);
 
     @Override
     public boolean canHandle(HttpServletRequest request) {
