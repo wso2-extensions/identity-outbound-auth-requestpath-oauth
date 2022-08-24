@@ -141,7 +141,7 @@ public class OAuthRequestPathAuthenticator extends AbstractApplicationAuthentica
 
     @Override
     public String getFriendlyName() {
-        return "OAuth Bearer";
+        return "oauth-bearer";
     }
 
     @Override
