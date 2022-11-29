@@ -113,10 +113,10 @@
         <imp.pkg.version.javax.servlet>[2.6.0, 3.0.0)</imp.pkg.version.javax.servlet>
         <commons-logging.osgi.version.range>[1.2,2.0)</commons-logging.osgi.version.range>
 
-        <identity.framework.version>5.14.67</identity.framework.version>
-        <carbon.identity.package.import.version.range>[5.14.67, 6.0.0)</carbon.identity.package.import.version.range>
-        <identity.inbound.auth.oauth.version>6.2.18</identity.inbound.auth.oauth.version>
-        <identity.oauth.package.import.version.range>[6.2.18, 7.0.0)</identity.oauth.package.import.version.range>
+        <identity.framework.version>6.0.0</identity.framework.version>
+        <carbon.identity.package.import.version.range>[6.0.0, 7.0.0)</carbon.identity.package.import.version.range>
+        <identity.inbound.auth.oauth.version>7.0.0</identity.inbound.auth.oauth.version>
+        <identity.oauth.package.import.version.range>[7.0.0, 8.0.0)</identity.oauth.package.import.version.range>
         <!-- Pax Logging Version -->
         <pax.logging.api.version>1.10.1</pax.logging.api.version>
 
