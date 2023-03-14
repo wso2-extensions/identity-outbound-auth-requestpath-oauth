@@ -114,7 +114,7 @@
         <commons-logging.osgi.version.range>[1.2,2.0)</commons-logging.osgi.version.range>
 
         <identity.framework.version>5.14.67</identity.framework.version>
-        <carbon.identity.package.import.version.range>[5.14.67, 6.0.0)</carbon.identity.package.import.version.range>
+        <carbon.identity.package.import.version.range>[5.14.67, 7.0.0)</carbon.identity.package.import.version.range>
         <identity.inbound.auth.oauth.version>6.2.18</identity.inbound.auth.oauth.version>
         <identity.oauth.package.import.version.range>[6.2.18, 7.0.0)</identity.oauth.package.import.version.range>
         <!-- Pax Logging Version -->
